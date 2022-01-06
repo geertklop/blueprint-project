@@ -1,0 +1,12 @@
+[flake8]
+max-line-length = 88
+ignore = F401, E402, W605, D100, D104, D107
+exclude =
+    .backup,
+    .git,
+    .venv,
+    __pycache__
+docstyle-convention = google
+; No docstring errors in tests
+per-file-ignores=
+    tests/*:D

@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "{{cookiecutter.project_name}}"
+version = "0.1.0"
+description = "To be filled."
+authors = [
+    "{{cookiecutter.author_name}} <{{cookiecutter.author_email}}>",
+]
+packages = [
+    {include = "{{cookiecutter.project_name_short}}", from ="src"}
+]
+
+[tool.poetry.dependencies]
+python = "^3.10.1"
+
+[tool.poetry.dev-dependencies]
+black = "^21.12b0"
+isort = "^5.10.1"
+flake8 = "^4.0.1"
+flake8-docstrings = "^1.6.0"
+mypy = "^0.920"
+interrogate = "^1.5.0"
+pre-commit = "^2.16.0"
+pytest = "^6.2.5"
+
+[tool.black]
+line-length=88
+target-version=['py310']
+
+[tool.isort]
+profile = 'black'
+
+[tool.mypy]
+ignore_missing_imports = true
+disallow_untyped_defs = true
+files = "src/"
+
+[tool.interrogate]
+ignore-init-method = true
+ignore-init-module = true
+ignore-module = true
+fail-under = 100
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
